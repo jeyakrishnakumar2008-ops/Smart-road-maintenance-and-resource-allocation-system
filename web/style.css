@@ -1,0 +1,551 @@
+/* style.css — Smart Municipal Road Maintenance System
+   Municipality: Senthamizh Nagar
+   Theme: White/Light with Blue and Teal accents
+   NO dark mode, NO JavaScript
+*/
+
+/* ============================================================
+   1. RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #F5F8FC;
+    color: #1E293B;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   2. TOP NAVIGATION BAR
+   ============================================================ */
+.topnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 60px;
+}
+
+.topnav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-icon {
+    font-size: 1.5rem;
+}
+
+.brand-name {
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: #1E293B;
+    letter-spacing: -0.02em;
+}
+
+.topnav-subtitle {
+    font-size: 0.8rem;
+    color: #64748B;
+    font-weight: 400;
+}
+
+/* ============================================================
+   3. LAYOUT: SIDEBAR + CONTENT
+   ============================================================ */
+.layout {
+    display: flex;
+    margin-top: 60px;          /* height of topnav */
+    min-height: calc(100vh - 60px);
+}
+
+/* ---- Sidebar ---- */
+.sidebar {
+    width: 220px;
+    min-height: calc(100vh - 60px);
+    background: #FFFFFF;
+    border-right: 1px solid #E2E8F0;
+    padding: 20px 0;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 20px;
+    color: #64748B;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    transition: all 0.15s ease;
+}
+
+.nav-link:hover {
+    background: #F0F7FF;
+    color: #2563EB;
+    border-left-color: #2563EB;
+}
+
+.nav-icon {
+    font-size: 1.1rem;
+    width: 22px;
+    text-align: center;
+}
+
+/* ---- Main content area ---- */
+.content {
+    margin-left: 220px;
+    flex: 1;
+    padding: 28px 32px;
+    max-width: 1200px;
+}
+
+/* ============================================================
+   4. PAGE HEADING
+   ============================================================ */
+.page-heading {
+    margin-bottom: 24px;
+}
+
+.page-title {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #1E293B;
+    letter-spacing: -0.03em;
+}
+
+.page-subtitle {
+    font-size: 0.88rem;
+    color: #64748B;
+    margin-top: 4px;
+}
+
+/* ============================================================
+   5. CARDS
+   ============================================================ */
+.card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card-header {
+    background: #F8FAFC;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 13px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Grid of quick-action cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+/* ============================================================
+   6. STAT CARDS (Dashboard)
+   ============================================================ */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.stat-icon { font-size: 1.8rem; margin-bottom: 6px; }
+.stat-value { font-size: 2.0rem; font-weight: 700; line-height: 1; color: #1E293B; }
+.stat-label { font-size: 0.78rem; color: #64748B; margin-top: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; }
+
+.stat-blue   { border-top: 3px solid #2563EB; }
+.stat-orange { border-top: 3px solid #D97706; }
+.stat-teal   { border-top: 3px solid #0D9488; }
+.stat-green  { border-top: 3px solid #15803D; }
+.stat-purple { border-top: 3px solid #7C3AED; }
+
+/* ============================================================
+   7. BUTTONS
+   ============================================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 20px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.btn-primary {
+    background: #2563EB;
+    color: #FFFFFF;
+}
+.btn-primary:hover { background: #1D4ED8; }
+
+.btn-teal {
+    background: #0D9488;
+    color: #FFFFFF;
+}
+.btn-teal:hover { background: #0F766E; }
+
+.btn-danger {
+    background: #DC2626;
+    color: #FFFFFF;
+}
+.btn-danger:hover { background: #B91C1C; }
+
+.btn:disabled, .btn[disabled] {
+    background: #CBD5E1;
+    color: #94A3B8;
+    cursor: not-allowed;
+}
+
+/* ============================================================
+   8. FORMS
+   ============================================================ */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.form-group input,
+.form-group select {
+    padding: 9px 12px;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #1E293B;
+    background: #FFFFFF;
+    transition: border-color 0.15s;
+    appearance: auto;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-end;
+    margin-bottom: 8px;
+}
+
+.form-row label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.form-row select {
+    padding: 8px 10px;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    color: #1E293B;
+    background: #FFFFFF;
+}
+
+/* ============================================================
+   9. TABLES
+   ============================================================ */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid #E2E8F0;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    background: #FFFFFF;
+}
+
+.data-table thead {
+    background: #F8FAFC;
+}
+
+.data-table th {
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #E2E8F0;
+    white-space: nowrap;
+}
+
+.data-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #F1F5F9;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+    background: #F8FAFC;
+}
+
+/* ============================================================
+   10. BADGES
+   ============================================================ */
+.badge {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.badge-pending  { background: #FEF3C7; color: #92400E; }
+.badge-assigned { background: #DBEAFE; color: #1D4ED8; }
+.badge-completed{ background: #DCFCE7; color: #15803D; }
+.badge-high     { background: #FEE2E2; color: #DC2626; }
+.badge-medium   { background: #FEF3C7; color: #D97706; }
+.badge-low      { background: #F1F5F9; color: #64748B; }
+
+/* ============================================================
+   11. ALERTS
+   ============================================================ */
+.alert {
+    padding: 12px 18px;
+    border-radius: 7px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: #F0FDF4;
+    color: #15803D;
+    border: 1px solid #BBF7D0;
+}
+
+.alert-error {
+    background: #FEF2F2;
+    color: #DC2626;
+    border: 1px solid #FECACA;
+}
+
+.alert-info {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    border: 1px solid #BFDBFE;
+}
+
+/* ============================================================
+   12. TEAM CARDS
+   ============================================================ */
+.team-card {
+    margin-bottom: 16px;
+}
+
+.team-header {
+    background: #F8FAFC;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.team-id {
+    background: #2563EB;
+    color: #FFFFFF;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.team-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1E293B;
+    flex: 1;
+}
+
+.team-details {
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.team-details p {
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+/* ============================================================
+   13. ORDERED LIST STYLING
+   ============================================================ */
+ol, ul {
+    padding-left: 22px;
+}
+
+ol li, ul li {
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+/* ============================================================
+   14. RESPONSIVE ADJUSTMENTS
+   ============================================================ */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .content {
+        margin-left: 0;
+        padding: 16px;
+    }
+    .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .topnav-subtitle {
+        display: none;
+    }
+}
+
+/* ============================================================
+   15. ROLE BADGES & TOPNAV USER
+   ============================================================ */
+.topnav-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.role-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.role-ward  { background: #DBEAFE; color: #1D4ED8; }
+.role-eng   { background: #E0E7FF; color: #4338CA; }
+.role-maint { background: #CCFBF1; color: #0F766E; }
+
+.user-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1E293B;
+}
+
+.logout-link {
+    font-size: 0.8rem;
+    color: #EF4444;
+    text-decoration: none;
+    padding: 4px 8px;
+    border: 1px solid #FECACA;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.logout-link:hover {
+    background: #FEF2F2;
+    border-color: #EF4444;
+}
+
+/* Status Badges */
+.badge-submitted  { background: #FEF3C7; color: #B45309; }
+.badge-returned   { background: #FDE68A; color: #92400E; }
+.badge-verified   { background: #DBEAFE; color: #1E40AF; }
+.badge-inprogress { background: #E0E7FF; color: #4338CA; }
+.badge-rejected   { background: #FEE2E2; color: #991B1B; }
+
+.alert-warning {
+    background: #FFFBEB;
+    color: #B45309;
+    border: 1px solid #FDE68A;
+}
+

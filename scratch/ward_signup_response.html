@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Ward Officer Registration — Senthamizh Nagar</title><link rel="stylesheet" href="/style.css"></head><body><div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:#F8FAFC;"><div style="background:#fff;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,0.06);max-width:540px;width:100%;padding:32px;border-top:5px solid #2563EB;"><div style="text-align:center;margin-bottom:24px;"><div style="font-size:38px;">👷</div><h1 style="font-size:20px;color:#0F172A;margin:6px 0;">Ward Officer Registration</h1><p style="color:#64748B;font-size:13px;">Fill out the official registration form to create your account.</p></div><div class="alert alert-error" style="margin-bottom:16px;">❌ Database Error during registration: Table &#39;smart_municipal_maintenance.users&#39; doesn&#39;t exist</div><form method="POST" action="/signup/ward"><div class="form-group">
+  <label for="fullName">Full Name *</label>
+  <input type="text" id="fullName" name="fullName" placeholder="Meenakshi Sundaram" required>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div class="form-group">
+  <label for="employeeId">Employee ID *</label>
+  <input type="text" id="employeeId" name="employeeId" placeholder="EMP-W08" required>
+</div>
+<div class="form-group">
+  <label for="wardNumber">Ward Number *</label>
+  <input type="text" id="wardNumber" name="wardNumber" placeholder="W08" required>
+</div>
+</div><div class="form-group">
+  <label for="email">Official Email Address *</label>
+  <input type="email" id="email" name="email" placeholder="meenakshi@senthamizh.gov.in" required>
+</div>
+<div class="form-group">
+  <label for="username">Desired Username *</label>
+  <input type="text" id="username" name="username" placeholder="ward_meena" required>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div class="form-group">
+  <label for="password">Password (min 6 chars) *</label>
+  <input type="password" id="password" name="password" placeholder="" required>
+</div>
+<div class="form-group">
+  <label for="confirmPassword">Confirm Password *</label>
+  <input type="password" id="confirmPassword" name="confirmPassword" placeholder="" required>
+</div>
+</div><button type="submit" class="btn btn-primary" style="width:100%;padding:12px;margin-top:12px;background:#2563EB;font-size:15px;">Create Account →</button></form><div style="text-align:center;margin-top:20px;font-size:13px;color:#64748B;">Already have an account? <a href="/login/ward" style="color:#2563EB;font-weight:600;">Sign In Here</a><br><a href="/signup" style="color:#94A3B8;font-size:12px;margin-top:8px;display:inline-block;">← Choose another role</a></div></div></div></body></html>

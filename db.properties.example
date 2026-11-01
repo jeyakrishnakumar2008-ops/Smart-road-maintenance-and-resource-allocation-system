@@ -1,0 +1,10 @@
+# Sample MySQL Configuration Template
+# Copy this file to db.properties and set your local MySQL credentials.
+
+db.url=jdbc:mysql://localhost:3306/smart_municipal_maintenance?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+db.user=your_mysql_username
+db.password=your_mysql_password
+db.driver=com.mysql.cj.jdbc.Driver
+
+# Security Registration Code for Engineering Section Signups
+security.engineering.registration_code=MUNI-ENG-2026
